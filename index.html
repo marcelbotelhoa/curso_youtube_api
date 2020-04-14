@@ -1,0 +1,113 @@
+<html lang="pt">
+    <head>
+        <title>You Tube API v3</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
+        <style>
+            body {
+                background: #F0F0F0;
+            }
+            
+            div#janela ul {
+                width:1090px;
+                margin:0 auto;
+                padding:0;
+            }
+            
+            div#janela ul li.principal {
+                position: relative;
+                list-style: none;
+                display: inline-block;
+                margin: 20px;
+                cursor: pointer;
+                width: 320px;
+                height: 180px;
+            }
+            
+            div#janela ul li.principal div.foto {
+                position: absolute;
+                top:0px;left:0px;
+                width:320px;
+                height: 180px;
+                z-index: 1;
+                clip: rect(0 320px 180px 0);
+            }
+            
+            div#janela ul li.principal div.foto div.legenda {
+                position: absolute;
+                top: 150px; left:0;
+                width: 320px; height: 150px;
+                padding: 5px;
+                z-index: 2;
+                cursor: pointer;
+                background-color: rgba(0,0,0,0.7);
+                
+                -webkit-transition: all 0.5s ease-out 0s;
+                -moz-transition: all 0.5s ease-out 0s;
+                -ms-transition: all 0.5s ease-out 0s;
+                -o-transition: all 0.5s ease-out 0s;
+                transition: all 0.5s ease-out 0s;
+            }
+            
+            div#janela ul li.principal div.foto div.legenda:hover {
+                top:100px;
+            }           
+            
+            div#janela ul li.principal div.foto div.legenda h5 {
+                font-family: sans-serif;
+                text-transform: uppercase;
+                font-weight: 100;
+                color:aqua;
+                margin:0;
+            }
+            
+            
+            div#janela ul li.principal div.foto div.legenda p {
+                font-family: sans-serif;
+                font-size: 0.7em;
+                color: aliceblue;
+            }
+        </style>
+        <script src="js/jquery.js"></script>
+        
+        <!-- Scrips do FancyBox -->
+        <script src="fancy/jquery.fancybox.js" type="text/javascript"></script>
+        <link haref="fancy/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css"/>
+        <script src="fancy/jquery.fancybox-media.js" type="text/javascript"></script>
+        
+        <script src="js/meuscript.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+                $('.facybox').fancybox();
+                var fbWidth = 800;
+                var fbHeight = 450;
+                
+                $('.fancybox-media')
+                    .attr('rel', 'media-gallery')
+                    .fancybox
+                    ({
+                        arrows : false,
+                        'maxWidth':fbWidth,
+                        'maxHeight':fbHeight,
+                        'width': fbWidth,
+                        'height':fbHeight,
+                        helpers : {
+                            media : {},
+                            buttons : {}
+                        } 
+                    })
+            });
+        </script>
+    </head>
+    <html>
+        <div id="janela">
+            <ul>
+                
+            </ul>
+        </div>
+
+    </html>
+</html>
